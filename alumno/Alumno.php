@@ -10,12 +10,13 @@
 		private $fecha_nac;
 		private $telefono;
 		private $direccion;
+		private $email;
 		private $created_at;
 		private $updated_at;
 		private $estado;
 		private $idcurso;
 
-		public Alumno(){
+		public function Alumno(){//constructor vacio
 			$this->idpersona = 0;
 			$this->nombre = "";
 			$this->app = "";
@@ -24,13 +25,14 @@
 			$this->sexo = "";
 			$this->fecha_nac = date("d-m-Y");
 			$this->direccion = "";
+			$this->email = "";
 			$this->created_at = date("Y-m-d", time());
 			$this->updated_at = date("Y-m-d", time());
 			$this->estado = 0;
 			$this->idcurso = 0;
 		}
 
-		public function getIdpersona() : int{
+		public function getIdpersona() : int {
 			return $this->idpersona;
 		}
 
@@ -102,6 +104,14 @@
 			$this->direccion = $direccion;
 		}
 
+		public function getEmail() : string {
+			return $this->email;
+		}
+
+		public function setEmail(string $email){
+			$this->email = $email;
+		}
+
 		public function getCreated_at() :string {
 			return $this->created_at;
 		}
@@ -133,8 +143,35 @@
 		public function setIdcurso(int $idcurso){
 			$this->idcurso = $idcurso;
 		}
-
-
 	}
+
+	/*$alumno = new Alumno();
+	$alumno->setNombre("Geo");
+	$alumno->setApp("Rios");
+	$alumno->setApm("Abarca");
+	$alumno->setDni("47859612");
+	$alumno->setSexo(1);
+	$alumno->setFecha_nac("2017-01-16");
+	$alumno->setTelefono("044211454");
+	$alumno->setDireccion("Av. America #145");
+	$alumno->setEmail("geovanny.j.rios@gmasil.com");
+	$alumno->setCreated_at("2017-01-16");
+	$alumno->setUpdated_at("2017-07-17");
+	$alumno->setEstado(1);
+	$alumno->setIdcurso(1);
+	//Prueba: para ver que no haya ningún error
+	echo $alumno->getNombre()."<br>";
+	echo $alumno->getApp()."<br>";
+	echo $alumno->getApm()."<br>";
+	echo $alumno->getDni()."<br>";
+	echo $alumno->getSexo()."<br>";
+	echo $alumno->getFecha_nac()."<br>";
+	echo $alumno->getTelefono()."<br>";
+	echo $alumno->getDireccion()."<br>";
+	echo $alumno->getEmail()."<br>";
+	echo $alumno->getCreated_at()."<br>";
+	echo $alumno->getUpdated_at()."<br>";
+	echo $alumno->getEstado()."<br>";
+	echo $alumno->getIdcurso()."<br>";*/
 
  ?>
