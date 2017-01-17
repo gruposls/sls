@@ -9,7 +9,6 @@
             <div class="page-inner">
                 <div class="page-title">
                     <h3>Form Elements</h3>
-
                 </div>
                 <div id="main-wrapper">
                     <div class="row">
@@ -91,6 +90,12 @@
                                                                     <input type="text" class="form-control" id="inputError" name="email">
                                                                 </div>
                                                             </div>
+                                                            <div class="form-group">
+                                            <label for="input-Default" class="col-sm-2 control-label">Curso</label>
+                                            <div class="col-sm-2">
+                                                <input type="text" class="form-control" id="input-Default" name="dni">
+                                            </div>
+                                        </div>
                                         <div class="col-sm-6">
                                                                 <button type="reset" class="btn btn-default">Cancelar</button>
                                                                 <button type="submit" class="btn btn-info pull-right">Registrar</button>
@@ -125,10 +130,6 @@
         </main><!-- Page Content -->
 
         <!-- Javascripts -->
-        <script src="./js/jquery-2.1.3.min.js"></script>
-        <script src="./js/select2.min.js"></script>
-        <script src="./js/form-select2.js"></script>
-
-
+       
     </body>
 </html>
