@@ -5,8 +5,21 @@ class BLCurso
 {
 	private $dao=null;
 
-	function __construct(argument)
-	public function listar(){
+	public function registrar( $objeto ) : bool{
+			$rpt = false;
+			$dao = new DAOCurso();
+			if( !empty( $objeto->getNombre())){
+				$dao->registrar( $objeto );
+				$rpt = true;
+			}			
+			return $rpt;
+		}
+	
+	public function modificar( $objeto ) : bool{
+			return true;
+	}
+
+		public function listar(){
 			$dao = new DAOCurso();
 			$dao->listar();			
 		}

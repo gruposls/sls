@@ -4,9 +4,36 @@
 	include (dirname(__FILE__) . '/../comunes/Consultas.php');	
 
 
-	class DAOCurso class_implements Consultas
+	class DAOCurso implements Consultas
 	{
 		private $conexion=null;
+
+		public function registrar( $objeto ) : bool{
+			$conexion = new Conexion();
+			$respuesta = false;
+			try{
+				$cnn = $conexion->getConexion();
+				$sql = "INSERT INTO curso (nombre,estado) VALUES(:nombre,1);";
+				$statement = $cnn->prepare( $sql );
+
+				$curso =$objeto->getNombre();				
+
+				$statement->bindParam(':nombre', $curso,PDO::PARAM_STR);
+				
+				$respuesta = $statement->execute();//devuelve true, si no hubo error.
+				
+			}catch(Throwable $e){
+				echo "EXCEPCIÓN ".$e->getMessage();
+			}finally{
+				$statement->closeCursor();
+				$conexion = null;
+			}
+			return $respuesta;
+		}
+
+		public function modificar( $objeto ) : bool{
+			return true;
+		}
 
 		public function listar(){
 			$conexion =new Conexion();
@@ -30,5 +57,5 @@
 				echo "listar por ID";
 				}
 		}
-	}
+
 ?>
