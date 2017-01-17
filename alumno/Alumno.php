@@ -78,11 +78,11 @@
 			$this->sexo = $sexo;
 		}
 
-		public function getFecha_nac(){
+		public function getFecha_nac() : string{
 			return $this->fecha_nac;
 		}
 
-		public function setFecha_nac($fecha_nac){
+		public function setFecha_nac(string $fecha_nac){
 			$this->fecha_nac = $fecha_nac;
 		}
 
@@ -102,19 +102,19 @@
 			$this->direccion = $direccion;
 		}
 
-		public function getCreated_at(){
+		public function getCreated_at() :string {
 			return $this->created_at;
 		}
 
-		public function setCreated_at($created_at){
+		public function setCreated_at(string $created_at){
 			$this->created_at = $created_at;
 		}
 
-		public function getUpdated_at(){
+		public function getUpdated_at() : string{
 			return $this->updated_at;
 		}
 
-		public function setUpdated_at($updated_at){
+		public function setUpdated_at(string $updated_at){
 			$this->updated_at = $updated_at;
 		}
 
