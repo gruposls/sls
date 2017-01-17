@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: sls_bd
 -- ------------------------------------------------------
--- Server version	5.7.14
+-- Server version	5.5.5-10.1.19-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -57,8 +57,9 @@ CREATE TABLE `persona` (
   `fecha_nac` date NOT NULL,
   `telefono` varchar(15) NOT NULL,
   `direccion` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL,
-  `updated_at` timestamp NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `estado` tinyint(1) NOT NULL,
   `idcurso` int(11) NOT NULL,
   PRIMARY KEY (`idpersona`),
@@ -85,4 +86,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-17 10:44:11
+-- Dump completed on 2017-01-17 11:55:55
