@@ -1,7 +1,7 @@
 <?php 
 	include (dirname(__FILE__) . '/../comunes/Consultas.php'); 
-	include (dirname(__FILE__) . '/../comunes/Conexion.php');	
-
+	include (dirname(__FILE__) . '/../comunes/Conexion.php');
+	
 	class DAOAlumno implements Consultas{
 
 		private $conexion = null;
@@ -12,35 +12,35 @@
 			try{
 				$cnn = $conexion->getConexion();
 				$sql = "INSERT INTO persona(nombre, app, apm, dni, sexo, fecha_nac, telefono, direccion, email, created_at, updated_at, estado, idcurso) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
-
-				/*$alumno->getNombre();
-				$alumno->getApp();
-				$alumno->getApm();
-				$alumno->getDni();
-				$alumno->getSexo();
-				$alumno->getFecha_nac();
-				$alumno->getTelefono();
-				$alumno->getDireccion();
-				$alumno->getEmail();
-				$alumno->getCreated_at();
-				$alumno->getUpdated_at();
-				$alumno->getEstado();
-				$alumno->getIdcurso();*/
+				/*Notice: Only variables should be passed by reference*/
+				$nombre = $objeto->getNombre();
+				$app = $objeto->getApp();
+				$apm = $objeto->getApm();
+				$dni = $objeto->getDni();
+				$sexo = $objeto->getSexo();
+				$fecha_nac = $objeto->getFecha_nac();
+				$telefono = $objeto->getTelefono();
+				$direccion = $objeto->getDireccion();
+				$email = $objeto->getEmail();
+				$created_at = $objeto->getCreated_at();
+				$updated_at = $objeto->getUpdated_at();
+				$estado = $objeto->getEstado();
+				$idcurso = $objeto->getIdcurso();
 
 				$statement = $cnn->prepare( $sql );
-				$statement->bindParam(1, $objeto->getNombre(), PDO::PARAM_STR);
-				$statement->bindParam(2, $objeto->getApp(), PDO::PARAM_STR);
-				$statement->bindParam(3, $objeto->getApm(), PDO::PARAM_STR);
-				$statement->bindParam(4, $objeto->getDni(), PDO::PARAM_STR);
-				$statement->bindParam(5, $objeto->getSexo(), PDO::PARAM_INT);
-				$statement->bindParam(6, $objeto->getFecha_nac(), PDO::PARAM_STR);
-				$statement->bindParam(7, $objeto->getTelefono(), PDO::PARAM_STR);
-				$statement->bindParam(8, $objeto->getDireccion(), PDO::PARAM_STR);
-				$statement->bindParam(9, $objeto->getEmail(), PDO::PARAM_STR);
-				$statement->bindParam(10, $objeto->getCreated_at(), PDO::PARAM_STR);
-				$statement->bindParam(11, $objeto->getUpdated_at(), PDO::PARAM_STR);
-				$statement->bindParam(12, $objeto->getEstado(), PDO::PARAM_INT);
-				$statement->bindParam(13, $objeto->getIdcurso(), PDO::PARAM_INT);
+				$statement->bindParam(1, $nombre, PDO::PARAM_STR);
+				$statement->bindParam(2, $app, PDO::PARAM_STR);
+				$statement->bindParam(3, $apm, PDO::PARAM_STR);
+				$statement->bindParam(4, $dni, PDO::PARAM_STR);
+				$statement->bindParam(5, $sexo, PDO::PARAM_INT);
+				$statement->bindParam(6, $fecha_nac, PDO::PARAM_STR);
+				$statement->bindParam(7, $telefono, PDO::PARAM_STR);
+				$statement->bindParam(8, $direccion, PDO::PARAM_STR);
+				$statement->bindParam(9, $email, PDO::PARAM_STR);
+				$statement->bindParam(10, $created_at, PDO::PARAM_STR);
+				$statement->bindParam(11, $updated_at, PDO::PARAM_STR);
+				$statement->bindParam(12, $estado, PDO::PARAM_INT);
+				$statement->bindParam(13, $idcurso, PDO::PARAM_INT);
 				
 				$respuesta = $statement->execute();//devuelve true, si no hubo error.
 				
@@ -62,24 +62,4 @@
 			echo "listar por id";
 		}
 	}
-
-	$dao = new DAOAlumno();
-
-	$alumno = new Alumno();
-	$alumno->setNombre("Geo");
-	$alumno->setApp("Rios");
-	$alumno->setApm("Abarca");
-	$alumno->setDni("47859612");
-	$alumno->setSexo(1);
-	$alumno->setFecha_nac("2017-01-16");
-	$alumno->setTelefono("044211454");
-	$alumno->setDireccion("Av. America #145");
-	$alumno->setEmail("geovanny.j.rios@gmasil.com");
-	$alumno->setCreated_at("2017-01-16");
-	$alumno->setUpdated_at("2017-07-17");
-	$alumno->setEstado(1);
-	$alumno->setIdcurso(1);
-
-	echo $dao->registrar( $alumno ) ? "Se registró." : "Error";
-
  ?>
