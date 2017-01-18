@@ -1,29 +1,19 @@
 <?php 
 	include 'DAOAlumno.php';
+	include 'ValidarAlumno.php';
+	include 'Alumno.php';
 
 	class BLAlumno{
 
 		private $dao = null;
+		private $validar = null;
 
 		public function registrar( $objeto ) : bool{
 			$rpt = false;
-			$dao = new DAOAlumno();
-			
-			if( !empty($objeto->getNombre()) && 
-				!empty($objeto->getApp()) &&
-				!empty($objeto->getApm()) &&
-				!empty($objeto->getDni()) &&
-				!empty($objeto->getFecha_nac()) &&
-				!empty($objeto->getTelefono()) &&
-				!empty($objeto->getDireccion()) &&
-				!empty($objeto->getEmail()) &&
-				!empty($objeto->getCreated_at()) &&
-				$objeto->getSexo() >= 0 &&
-				$objeto->getEstado() >= 0 &&
-				$objeto->getIdcurso() > 0 ){
-				$rpt = $dao->registrar( $objeto );
-			}
-			return $rpt;
+			//$dao = new DAOAlumno();
+
+			$validar = new ValidarAlumno( $objeto );
+			return $validar->validarCamposCadena();			
 		}
 
 		public function modificar( $objeto ) : bool{
@@ -38,5 +28,23 @@
 			echo "listar por ID";
 		}
 	}
+
+	$alumno = new Alumno();
+			$alumno->setNombre("Geo");
+			$alumno->setApp("Rios");
+			$alumno->setApm("Abarca");
+			$alumno->setDni("47859612");
+			$alumno->setSexo(1);
+			$alumno->setFecha_nac("2017-01-16");
+			$alumno->setTelefono("044211454");
+			$alumno->setDireccion("Av. America #145");
+			$alumno->setEmail("geovanny.j.rios@gmasil.com");
+			$alumno->setCreated_at("2017-01-16");
+			$alumno->setUpdated_at("2017-07-17");
+			$alumno->setEstado(0);
+			$alumno->setIdcurso(1);
+
+	$bl = new BLAlumno();
+	echo $bl->registrar( $alumno ) ? "Bien" : "Llenar todos los datos correctamente.";
 
  ?>
