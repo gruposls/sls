@@ -9,7 +9,7 @@
 			$this->objeto = $objeto;
 		}
 
-		public function validarCamposCadena() : bool{
+		public function validarCampos() : bool{
 			$alumno = $this->objeto;
 			$rpt = false;
 			if( !empty($alumno->getNombre()) && 

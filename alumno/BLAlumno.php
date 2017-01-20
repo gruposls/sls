@@ -8,12 +8,35 @@
 		private $dao = null;
 		private $validar = null;
 
-		public function registrar( $objeto ) : bool{
-			$rpt = false;
-			//$dao = new DAOAlumno();
+		public function registrar() : string{
+			$informacion = [];
 
-			$validar = new ValidarAlumno( $objeto );
-			return $validar->validarCamposCadena();			
+			$alumno = new Alumno();
+			$alumno->setNombre( $_POST["nombre"] );
+			$alumno->setApp( $_POST["app"] );
+			$alumno->setApm( $_POST["apm"] );
+			$alumno->setDni( $_POST["dni"] );
+			$alumno->setSexo( $_POST["sexo"] );
+			$alumno->setFecha_nac( $_POST["fecha_nac"] );
+			$alumno->setTelefono( $_POST["telefono"] );
+			$alumno->setDireccion( $_POST["direccion"] );
+			$alumno->setEmail( $_POST["email"] );
+			$alumno->setCreated_at( date("Y-m-d", time()) );
+			$alumno->setUpdated_at( date("Y-m-d", time()) );
+			$alumno->setEstado(0);//por defecto cero
+			$alumno->setIdcurso( $_POST["idcurso"] );
+
+			$validar = new ValidarAlumno( $alumno );
+
+			if ( $validar->validarCampos() ){
+				$dao = new DAOAlumno();
+				$dao->registrar( $alumno ) ? $informacion["respuesta"] = "ok_registro" : $informacion["respuesta"] = "error_registro";
+			}else{
+				$informacion["respuesta"] = "error_campos"; 
+			}
+
+			return ( json_encode($informacion) );
+			
 		}
 
 		public function modificar( $objeto ) : bool{
@@ -29,7 +52,7 @@
 		}
 	}
 
-	$alumno = new Alumno();
+	/*$alumno = new Alumno();
 			$alumno->setNombre("Geo");
 			$alumno->setApp("Rios");
 			$alumno->setApm("Abarca");
@@ -45,6 +68,6 @@
 			$alumno->setIdcurso(1);
 
 	$bl = new BLAlumno();
-	echo $bl->registrar( $alumno ) ? "Bien" : "Llenar todos los datos correctamente.";
+	echo $bl->registrar( $alumno ) ? "Bien" : "Llenar todos los datos correctamente.";*/
 
  ?>

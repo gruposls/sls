@@ -15,8 +15,8 @@
                     <div class="col-md-12">
                         <div class="panel panel-white">
                             <div class="panel-body">
-                                <form id="frmRegistrarAlumno" class="form-horizontal" action="" method="POST">
-                                    <input type="hidden" name="fu" value="nuevo">
+                                <form id="frmRegistrarAlumno" class="form-horizontal" method="POST">
+                                    <input type="hidden" name="opcion" value="registrar">
                                     <div class="form-group">
                                         <label for="input-Default" class="col-sm-2 control-label">Nombre</label>
                                         <div class="col-sm-2">
@@ -46,13 +46,13 @@
                                         <div class="col-sm-6" id="rates">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" id="ms" name="rate" value="1" checked="">
+                                                    <input type="radio" id="ms" name="sexo" value="1" checked="">
                                                    Masculino
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" id="fm" name="rate" value="0">
+                                                    <input type="radio" id="fm" name="sexo" value="0">
                                                     Femenino
                                                 </label>
                                             </div>                                                                    

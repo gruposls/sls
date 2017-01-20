@@ -1,10 +1,10 @@
 <?php 
 
 	interface Validar{
-		public function validarCamposCadena() : bool ;
+		public function validarCampos() : bool ;
 		public function validarCamposEntero() : bool;
 		public function validarCamposBool() : bool;
-		public function validarCamposFecha(): bool;
+		//public function validarCamposFecha(): bool;
 	}
 
  ?>

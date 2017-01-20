@@ -1,15 +1,26 @@
 <?php 
 	include 'BLAlumno.php';
-	//include 'Alumno.php';
 
-	class AlumnoController{
+	$opcion = $_POST["opcion"];
+	$bl_alumno = null;
 
-		//$bl_alumno = new BLAlumno();
+	switch ( $opcion ) {
+		case 'registrar':
+			$bl_alumno = new BLAlumno();
+			echo $bl_alumno->registrar();
+			break;
 		
-		//$bl_alumno->registrar();
+		case 'modificar':
 
+			break;
 	}
-
+	
+	
+	
+	
+	
+		
+	
 
 
 		
