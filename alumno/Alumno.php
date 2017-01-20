@@ -16,7 +16,7 @@
 		private $estado;
 		private $idcurso;
 
-		public function Alumno(){//constructor vacio
+		public function __construct(){//constructor vacio
 			$this->idpersona = 0;
 			$this->nombre = "";
 			$this->app = "";
