@@ -15,7 +15,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-white">
                             <div class="panel-body">
-                                <div role="form" onkeypress="return runScriptReg(event)">
+                                <form id="frmRegistrarAlumno" class="form-horizontal" action="" method="POST">
                                     <input type="hidden" name="fu" value="nuevo">
                                     <div class="form-group">
                                         <label for="input-Default" class="col-sm-2 control-label">Nombre</label>
@@ -99,8 +99,8 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <button type="reset" class="btn btn-default">Cancelar</button>
-                                        <button type="button" onclick="goReg()" class="btn btn-info pull-right">Registrar</button>
-                                    </div>
+                                        <button type="submit" class="btn btn-info pull-right">Registrar</button>
+                                    </form>
                                     
                                 </div>
                                
@@ -116,6 +116,12 @@
         </div><!-- Page Inner -->
     </main><!-- Page Content -->
     <!-- Javascripts -->
-
+    <script type="text/javascript" src="./public/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="./public/js/alumno.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            alumno_registrar();
+        });       
+    </script>
 </body>
 </html>
