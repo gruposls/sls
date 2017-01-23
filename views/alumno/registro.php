@@ -22,7 +22,7 @@ include (dirname(__FILE__) . '/../../sources/header.html');
                                     <div class="form-group">
                                         <label for="input-Default" class="col-sm-2 control-label">Nombre</label>
                                         <div class="col-sm-2">
-                                        <input type="text" class="form-control" id="nombre" name="nombre">
+                                            <input type="text" class="form-control" id="nombre" name="nombre">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -49,7 +49,7 @@ include (dirname(__FILE__) . '/../../sources/header.html');
                                             <div class="radio">
                                                 <label>
                                                     <input type="radio" id="ms" name="sexo" value="1" checked="">
-                                                   Masculino
+                                                    Masculino
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -116,10 +116,10 @@ include (dirname(__FILE__) . '/../../sources/header.html');
         </div><!-- Page Inner -->
     </main><!-- Page Content -->
     <!-- Javascripts -->
-    <script type="text/javascript" src="./public/js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="./public/js/datatables.js"></script>
-    <script type="text/javascript" src="./public/js/alumno.js"></script>
-    <script type="text/javascript" src="./public/js/curso.js"></script>
+    <script type="text/javascript" src="../../public/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../public/js/datatables.js"></script>
+    <script type="text/javascript" src="../../public/js/alumno.js"></script>
+    <script type="text/javascript" src="../../public/js/curso.js"></script>
     <script type="text/javascript">
         $(function(){
             alumno_registrar();

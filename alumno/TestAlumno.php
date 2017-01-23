@@ -1,36 +1,36 @@
 <?php 
 	include 'BLAlumno.php';
-	include 'Alumno.php';
+	//include 'Alumno.php';
 
 	class TestAlumno{
 		private $bl = null;
 		public function registrar(){
 			$bl = new blAlumno();
+			//$alumno = new Alumno();
+			$_POST["nombre"] = "Pett";
+			$_POST["app"] = "Ríos";
+			$_POST["apm"] = "Abarca";
+			$_POST["dni"] = "48751230";
+			$_POST["sexo"] = 1;
+			$_POST["fecha_nac"] = "2017-01-16";
+			$_POST["telefono"] = "044211454";
+			$_POST["direccion"] = "Av. America #145";
+			$_POST["email"] = "pett.j.rios@gmasil.com";
+			//date("Y-m-d", time()) = ;
+			//date("Y-m-d", time()) = ;
+			//$alumno->setEstado(0);//por defecto cero
+			$_POST["idcurso"] = 2;
 
-			$alumno = new Alumno();
-			$alumno->setNombre("Geo");
-			$alumno->setApp("Rios");
-			$alumno->setApm("Abarca");
-			$alumno->setDni("47859612");
-			$alumno->setSexo(1);
-			$alumno->setFecha_nac("2017-01-16");
-			$alumno->setTelefono("044211454");
-			$alumno->setDireccion("Av. America #145");
-			$alumno->setEmail("geovanny.j.rios@gmasil.com");
-			$alumno->setCreated_at("2017-01-16");
-			$alumno->setUpdated_at("2017-07-17");
-			$alumno->setEstado(0);
-			$alumno->setIdcurso(1);
-
-			echo $bl->registrar( $alumno ) ? "Se registró." : "Llenar e ingresar los campos correctamente.";
+			echo $bl->registrar() ? "Se registró." : "Llenar e ingresar los campos correctamente.";
 		}
 
 		public function listar(){
-			echo "listar";
+			$bl = new BLAlumno();
+			$bl->listar();
 		}
 	}
 
 	$test = new TestAlumno();
-	$test->registrar();
+	$test->listar();
 
  ?>

@@ -44,7 +44,8 @@
 		}
 
 		public function listar(){
-			echo "listar";			
+			$dao = new DAOAlumno();
+			$dao->listar();	
 		}
 
 		public function listarPorID(int $id){

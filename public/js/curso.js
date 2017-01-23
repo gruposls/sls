@@ -1,7 +1,7 @@
  var curso_combo = function(){
         $.ajax({
         	method:"POST",
-        	url: "curso/CursoController.php",
+        	url: "../../curso/CursoController.php",
         	data: {opcion:"combo"}
         }).done(function( info ){
             var json = JSON.parse( info );

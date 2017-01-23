@@ -56,8 +56,29 @@
 			return true;
 		}
 		public function listar(){
-			echo "listar alumnos";
+			$conexion = new Conexion();
+			try{
+				$cnn = $conexion->getConexion();
+				$sql = "SELECT p.nombre, app, apm, p.estado, p.idcurso, c.nombre as curso
+						FROM persona p INNER JOIN curso c 
+						ON p.idcurso = c.idcurso
+						WHERE p.estado = 0;";						
+				$statement = $cnn->prepare( $sql );
+				$statement->execute();
+				$data["data"] = []; //arreglo vacio
+				while( $resultado = $statement->fetch( PDO::FETCH_ASSOC)){
+					$data["data"][] = $resultado;
+				}
+				echo json_encode($data);
+
+			}catch( Exception $e){
+				echo "EXCEPCIÓN ".$e->getMessage();
+			}finally{
+				$statement->closeCursor();
+				$conexion = null;
+			}
 		}
+
 		public function listarPorID(int $id){
 			echo "listar por id";
 		}

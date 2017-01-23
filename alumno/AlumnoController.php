@@ -10,8 +10,9 @@
 			echo $bl_alumno->registrar();
 			break;
 		
-		case 'modificar':
-
+		case 'listar':
+			$bl_alumno = new BLAlumno();
+			$bl_alumno->listar();
 			break;
 	}
 	
