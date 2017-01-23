@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <?php include('./sources/header.html');?>
+<?php
+include (dirname(__FILE__) . '/../../sources/header.html');
+?>
 
-    <body class="page-header-fixed">
 
-        <main class="page-content content-wrap">
+<body class="page-header-fixed">
 
-            <div class="page-inner">
-                <div class="page-title">
-                    <h3>Form Elements</h3>
-                </div>
-               <div id="main-wrapper">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-white">
-                                <div class="panel-heading clearfix">
-                                    <h4 class="panel-title">Responsive table</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table">
+    <main class="page-content content-wrap">
+
+        <div class="page-inner">
+            <div class="page-title">
+                <h3>Formulario de Registro</h3>
+            </div>
+            <div id="main-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-white">
+                            <div class="panel-body">
+                            <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -61,24 +60,23 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div>
-                                </div>
+                                        </div>                               
                             </div>
+                            
                         </div>
-                    </div><!-- Row -->
-                </div>
-                
-                <div class="page-footer">
-                    <p class="no-s">2016 &copy; Bilbox by dougborton.</p>
-                </div>
-            </div><!-- Page Inner -->
-        </main><!-- Page Content -->
+                    </div>
+                </div><!-- Row -->
+            </div><!-- Main Wrapper -->
 
-        <!-- Javascripts -->
-        <script src="./js/jquery-2.1.3.min.js"></script>
-        <script src="./js/select2.min.js"></script>
-        <script src="./js/form-select2.js"></script>
-
-
-    </body>
+            <div class="page-footer">
+                <p class="no-s">2016 &copy; Bilbox by dougborton.</p>
+            </div>
+        </div><!-- Page Inner -->
+    </main><!-- Page Content -->
+    <!-- Javascripts -->
+    <script type="text/javascript" src="./public/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="./public/js/datatables.js"></script>
+    <script type="text/javascript" src="./public/js/alumno.js"></script>
+    <script type="text/javascript" src="./public/js/curso.js"></script>
+</body>
 </html>

@@ -42,8 +42,9 @@
 						$sql= "SELECT * FROM curso;";
 						$statement=$cnn->prepare($sql);
 						$statement->execute();
+						$data = [];
 						while($resultado=$statement->fetch(PDO::FETCH_ASSOC)){
-							$data["data"][]=$resultado;
+							$data[]=$resultado;
 					}
 						echo json_encode($data);
 				}catch (Throwable $e) {

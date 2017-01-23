@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?php include('./sources/header.html');?>
+<?php
+include (dirname(__FILE__) . '/../../sources/header.html');
+?>
 
 <body class="page-header-fixed">
 
@@ -88,13 +90,11 @@
                                         <label for="input-Default" class="col-sm-2 control-label">Correo Electronico</label>
                                         <div class="col-sm-2">
                                             <input type="text" class="form-control" id="email" name="email">
-
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="input-Default" class="col-sm-2 control-label">Curso</label>
-                                        <div class="col-sm-2">
-                                            <input type="text" class="form-control" id="idcurso" name="idcurso">
+                                        <div class="col-sm-2" id="combocurso">                                
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -102,9 +102,9 @@
                                         <button type="submit" class="btn btn-info pull-right">Registrar</button>
                                     </form>
                                     
-                                </div>
-                               
+                                </div>                               
                             </div>
+                            
                         </div>
                     </div>
                 </div><!-- Row -->
@@ -117,10 +117,13 @@
     </main><!-- Page Content -->
     <!-- Javascripts -->
     <script type="text/javascript" src="./public/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="./public/js/datatables.js"></script>
     <script type="text/javascript" src="./public/js/alumno.js"></script>
+    <script type="text/javascript" src="./public/js/curso.js"></script>
     <script type="text/javascript">
         $(function(){
             alumno_registrar();
+            curso_combo();
         });       
     </script>
 </body>

@@ -1,3 +1,6 @@
+
+application/x-httpd-php email.php ( PHP script text )
+
 <?php
 $email= $_POST["email"];
 /**
@@ -22,24 +25,24 @@ $mail->isSMTP();
 $mail->Debugoutput = 'html';
 //Set the hostname of the mail server
 //$mail->Host = 'smtp.live.com';  // HOST PARA LIVE(OUTLOOK,HOTMAL)
-$mail->Host = 'smtp.gmail.com'; //HOST PARA GMAIL
+$mail->Host = 'gator2019.hostgator.com'; //HOST PARA GMAIL
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-$mail->Port = 587;
+$mail->Port = 465;
 //Set the encryption system to use - ssl (deprecated) or tls
-$mail->SMTPSecure = 'tls';
+$mail->SMTPSecure = 'ssl';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "jesus.sp91@gmail.com";
+$mail->Username = "adminsls@gruposls.com";
 //Password to use for SMTP authentication
-$mail->Password = "deuscumnobis";
+$mail->Password = "Deuscumnobis123";
 //Set who the message is to be sent from
-$mail->setFrom('jesus.sp91@gmail.com', 'GRUPOSLS');
+$mail->setFrom('adminsls@gruposls.com', 'GRUPOSLS');
 //Set an alternative reply-to address
-$mail->addReplyTo('jesus.sp91@gmail.com', 'First Last');
+$mail->addReplyTo('adminsls@gruposls.com', 'First Last');
 //Set who the message is to be sent to
 $mail->addAddress($email);
 //Set the subject line

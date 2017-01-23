@@ -16,10 +16,10 @@ include 'Curso.php';
 		}
 
 		public function listar(){
-			$bl = new BLProducto();			
+			$bl = new BLCurso();			
 			$bl->listar();
 		}
 	}
 
 	$prueba = new TestCurso();
-	$prueba->registrar();
+	$prueba->listar();
