@@ -1,59 +1,68 @@
 
-application/x-httpd-php email.php ( PHP script text )
-
 <?php
 $email= $_POST["email"];
-/**
- * This example shows settings to use when sending via Google's Gmail servers.
- */
-//SMTP needs accurate times, and the PHP time zone MUST be set
-//This should be done in your php.ini, but this is how to do it if you don't have access to that
+
 date_default_timezone_set('Etc/UTC');
-	//require (dirname(__FILE__) . '/../comunes/Conexion.php');
+	
 require (dirname(__FILE__) . '/PHPMailer-master/PHPMailerAutoload.php');
-//require 'C:\xampp\htdocs\SLSF\public_html\back\PHPMailer-master\PHPMailerAutoload.php';
-//Create a new PHPMailer instance
+
 $mail = new PHPMailer;
-//Tell PHPMailer to use SMTP
+
 $mail->isSMTP();
-//Enable SMTP debugging
-// 0 = off (for production use)
-// 1 = client messages
-// 2 = client and server messages
-//$mail->SMTPDebug =0;
-//Ask for HTML-friendly debug output
 $mail->Debugoutput = 'html';
-//Set the hostname of the mail server
-//$mail->Host = 'smtp.live.com';  // HOST PARA LIVE(OUTLOOK,HOTMAL)
-$mail->Host = 'gator2019.hostgator.com'; //HOST PARA GMAIL
-// use
-// $mail->Host = gethostbyname('smtp.gmail.com');
-// if your network does not support SMTP over IPv6
-//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+$mail->Host = 'gator2019.hostgator.com';
+
 $mail->Port = 465;
-//Set the encryption system to use - ssl (deprecated) or tls
+
 $mail->SMTPSecure = 'ssl';
-//Whether to use SMTP authentication
+
 $mail->SMTPAuth = true;
-//Username to use for SMTP authentication - use full email address for gmail
+
 $mail->Username = "adminsls@gruposls.com";
-//Password to use for SMTP authentication
+
 $mail->Password = "Deuscumnobis123";
-//Set who the message is to be sent from
+
 $mail->setFrom('adminsls@gruposls.com', 'GRUPOSLS');
-//Set an alternative reply-to address
+
 $mail->addReplyTo('adminsls@gruposls.com', 'First Last');
-//Set who the message is to be sent to
+
 $mail->addAddress($email);
-//Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test'; //TITULO DEL MENSAJE A ENVIAR
-//Read an HTML message body from an external file, convert referenced images to embedded,
-//convert HTML into a basic plain-text alternative body
-$mail->msgHTML('Holaaaa'); //INFORMACION DEL MENSAJE A ENVIAR
-//Replace the plain text body with one created manually
+
+$mail->AddEmbeddedImage('docs/1.png', 'logo_php', 'logo', 'base64', 'image/png'); 
+
+$mail->isHTML(true);
+
+$mail->CharSet = 'UTF-8';
+
+$mail->Subject = 'PHPMailer GMail SMTP test'; 
+
+$mail->addAttachment('docs/movillibertad.pdf', 'movillibertad.pdf');
+$correo = "<div style='width:90%; border:4px ridge blue; padding:6px;'>";
+	$correo .= "<h1>Mensaje para ti</h1>";
+	$correo .= "</div>";
+	$correo .= "<img src='cid:logo_php' align='left' border='0' hspace='10' />"; // OJO con la imagen. Hablaremos de esto en el próximo apartado.
+	$correo .= "Este es un mensje para ti.<br />";
+	$correo .= "En él puedes ver:";
+	$correo .= "<ul>";
+	$correo .= "<li>Ver un correo en HTML</li>";
+	$correo .= "<li>Comprobar las funcionalidades de PHPMailer</li>";
+	$correo .= "<li>Contactar con nosotros <a href='http://eldesvandejose.com/contacta-con-nosotros/' target='_blank'>aquí</a></li>";
+	$correo .= "<li>Registrarte en la página <a href='http://eldesvandejose.com/register/' target='_blank'>aquí</a></li>";
+	$correo .= "</ul>";
+	// En nuestro correo incluimos hasta un formulario.
+	$correo .= "<form action='mailto:mi.cuenta@mi.servidor.com' method='post'>";
+	$correo .= "<br /><br /><br /><br />";
+	$correo .= "Tu nombre: ";
+	$correo .= "<input type='text' name='nombre' size='20' style='border: 1px solid blue; font-size:12px; font-familiy:Arial;' /><br /><br />";
+	$correo .= "Tu opinión:<br />";
+	$correo .= "<textarea name='opinion' cols='60' rows='10' style='border: 1px solid blue; font-size:12px; font-familiy:Arial; resize:none;'></textarea>";
+	$correo .= "<br /><br />";
+	$correo .= "<input type='submit' value='Enviar' style='border: 1px solid blue; font-size:12px; font-familiy:Arial;' />";
+	$correo .= "</form>";
+
+$mail->Body = $correo;
 $mail->AltBody = 'This is a plain-text message body';
-//Attach an image file
-//send the message, check for errors
+
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
