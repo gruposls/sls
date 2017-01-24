@@ -4,7 +4,6 @@
 include (dirname(__FILE__) . '/../../sources/header.html');
 ?>
 
-
 <body class="page-header-fixed">
 
     <main class="page-content content-wrap">
@@ -16,9 +15,9 @@ include (dirname(__FILE__) . '/../../sources/header.html');
             <div id="main-wrapper">
                 <div class="row">
                     <div class="input-daterange input-group" id="datepicker">
-                        <input type="text" class="input-sm form-control" name="from" placeholder="From date"/>
+                        <input type="text" id="fi" class="input-sm form-control" name="from" placeholder="From date"/>
                         <span class="input-group-addon">to</span>
-                        <input type="text" class="input-sm form-control" name="to" placeholder="To date"/>
+                        <input type="text" id="ff" class="ff input-sm form-control" name="to" placeholder="To date"/>
                     </div>
                 </div>
                 <div class="row">
@@ -59,9 +58,17 @@ include (dirname(__FILE__) . '/../../sources/header.html');
 <script type='text/javascript'>
 $(function(){
     alumno_listar();
-$('.input-daterange').datepicker({
-    autoclose: true
-});
+
+$("#fi").datepicker({
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        maxDate: '+0d'         
+    }).datepicker("setDate", new Date());
+$("#ff").datepicker({
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        maxDate: '+0d'
+    }).datepicker("setDate", new Date());
 });
 
 </script>

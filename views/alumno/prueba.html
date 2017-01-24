@@ -1,0 +1,17 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript">
+	$(function () {
+    $.datepicker.setDefaults($.datepicker.regional["es"]);
+    $("#datepicker").datepicker({
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+         minDate: 0 
+    }).datepicker("setDate", new Date());
+ });
+</script>
+<div>
+    <label for="datepicker">Selecciona Fecha:</label>
+    <input type="text" id="datepicker"/>
+</div>
