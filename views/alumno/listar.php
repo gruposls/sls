@@ -16,9 +16,9 @@ include (dirname(__FILE__) . '/../../sources/header.html');
             <div id="main-wrapper">
                 <div class="row">
                     <div class="input-daterange input-group" id="datepicker">
-                        <input type="text" class="input-sm form-control" name="from" placeholder="From date"/>
+                        <input type="text" class="input-sm form-control" placeholder="From date"/>
                         <span class="input-group-addon">to</span>
-                        <input type="text" class="input-sm form-control" name="to" placeholder="To date"/>
+                        <input type="text" class="input-sm form-control" placeholder="To date"/>
                     </div>
                 </div>
                 <div class="row">
@@ -57,12 +57,9 @@ include (dirname(__FILE__) . '/../../sources/header.html');
 <script type="text/javascript" src="../../public/js/datepicker.js"></script>
 <script type="text/javascript" src="../../public/js/alumno.js"></script>
 <script type='text/javascript'>
-$(function(){
-    alumno_listar();
-$('.input-daterange').datepicker({
-    autoclose: true
-});
-});
+    $(function(){
+        alumno_listar();
+    });
 
 </script>
 </body>

@@ -28,9 +28,15 @@
 			$bl = new BLAlumno();
 			$bl->listar();
 		}
+
+		public function listarPorArregloParametros(){
+
+			$bl = new BLAlumno();
+			$bl->listarPorArregloParametros();
+		}
 	}
 
 	$test = new TestAlumno();
-	$test->listar();
+	$test->listarPorArregloParametros();
 
  ?>

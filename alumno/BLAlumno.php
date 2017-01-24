@@ -48,8 +48,14 @@
 			$dao->listar();	
 		}
 
-		public function listarPorID(int $id){
-			echo "listar por ID";
+		public function listarPorArregloParametros(){
+
+			$parametros[0] = 0;
+			$parametros[1] = "2017-01-20";
+			$parametros[2] = "2017-01-23";
+
+			$dao = new DAOAlumno();
+			$dao->listarPorArregloParametros( $parametros );
 		}
 	}
 

@@ -5,5 +5,5 @@
 		public function registrar($objeto) : bool;
 		public function modificar($objeto) : bool;
 		public function listar();
-		public function listarPorID(int $id);
+		public function listarPorArregloParametros(array $a);
 	}

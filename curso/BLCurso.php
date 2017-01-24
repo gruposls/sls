@@ -6,26 +6,26 @@ class BLCurso
 	private $dao=null;
 
 	public function registrar( $objeto ) : bool{
-			$rpt = false;
-			$dao = new DAOCurso();
-			if( !empty( $objeto->getNombre())){
-				$dao->registrar( $objeto );
-				$rpt = true;
-			}			
-			return $rpt;
-		}
+		$rpt = false;
+		$dao = new DAOCurso();
+		if( !empty( $objeto->getNombre())){
+			$dao->registrar( $objeto );
+			$rpt = true;
+		}			
+		return $rpt;
+	}
 	
 	public function modificar( $objeto ) : bool{
-			return true;
+		return true;
 	}
 
-		public function listar(){
-			$dao = new DAOCurso();
-			$dao->listar();			
-		}
+	public function listar(){
+		$dao = new DAOCurso();
+		$dao->listar();			
+	}
 
-		public function listarPorID(int $id){
-			echo "listar por ID";
-		}
+	public function listarPorArregloParametros(array $a){
+		echo "listar por ID";
+	}
 }
 ?>
