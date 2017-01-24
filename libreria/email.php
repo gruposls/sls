@@ -36,7 +36,7 @@ $mail->CharSet = 'UTF-8';
 
 $mail->Subject = 'PHPMailer GMail SMTP test'; 
 
-$mail->addAttachment('docs/movillibertad.pdf', 'movillibertad.pdf');
+$mail->addAttachment('docs/movilli20bertad.pdf', 'movillibertad.pdf');
 $correo = "<div style='width:90%; border:4px ridge blue; padding:6px;'>";
 	$correo .= "<h1>Mensaje para ti</h1>";
 	$correo .= "</div>";
