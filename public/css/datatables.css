@@ -52,24 +52,6 @@ meta.foundation-mq-xxlarge {
 meta.foundation-data-attribute-namespace {
     font-family: false
 }
-html,
-body {
-    height: 100%
-}
-html {
-    box-sizing: border-box
-}
-*,
-*:before,
-*:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit
-}
-html,
-body {
-    font-size: 100%
-}
 body {
     background: #fff;
     color: #222;
@@ -1634,15 +1616,6 @@ form .row input.columns,
 form .row textarea.column,
 form .row textarea.columns {
     padding-left: 0.5rem
-}
-label {
-    color: #4d4d4d;
-    cursor: pointer;
-    display: block;
-    font-size: 0.875rem;
-    font-weight: normal;
-    line-height: 1.5;
-    margin-bottom: 0
 }
 label.right {
     float: none !important;
@@ -4875,11 +4848,6 @@ th,
 td {
     margin: 0;
     padding: 0
-}
-a {
-    color: #008CBA;
-    line-height: inherit;
-    text-decoration: none
 }
 a:hover,
 a:focus {

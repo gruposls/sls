@@ -4,10 +4,13 @@
 include (dirname(__FILE__) . '/../../sources/header.html');
 ?>
 
-<body class="page-header-fixed">
+<body>
+<div class="main-wrapper">
 
-    <main class="page-content content-wrap">
-
+<?php
+include (dirname(__FILE__) . '/../../sources/navbar.html');
+?>
+    <div class="content-wrapper">
         <div class="page-inner">
             <div class="page-title">
                 <h3>Formulario de Registro</h3>
@@ -20,32 +23,32 @@ include (dirname(__FILE__) . '/../../sources/header.html');
                                 <form id="frmRegistrarAlumno" class="form-horizontal" method="POST">
                                     <input type="hidden" name="opcion" value="registrar">
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Nombre</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">Nombre</label>
+                                        <div class="col-md-5">
                                             <input type="text" class="form-control" id="nombre" name="nombre">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Apellido Paterno</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">Apellido Paterno</label>
+                                        <div class="col-md-5">
                                             <input type="text" class="form-control" id="app" name="app">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Apellido Materno</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">Apellido Materno</label>
+                                        <div class="col-md-5">
                                             <input type="text" class="form-control" id="apm" name="apm">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">DNI</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">DNI</label>
+                                        <div class="col-md-5">
                                             <input type="text" class="form-control" id="dni" name="dni">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Sexo</label>
-                                        <div class="col-sm-6" id="rates">
+                                        <label for="input-Default" class="col-md-3 control-label">Sexo</label>
+                                        <div class="col-md-5" id="rates">
                                             <div class="radio">
                                                 <label>
                                                     <input type="radio" id="ms" name="sexo" value="1" checked="">
@@ -62,39 +65,36 @@ include (dirname(__FILE__) . '/../../sources/header.html');
                                     </div>   
 
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Fecha Nacimiento</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">Fecha Nacimiento</label>
+                                        <div class="col-md-5">
                                             <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </div>
                                                 <input id="fecha_nac" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" name="fecha_nac">
 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Telefono</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">Telefono</label>
+                                        <div class="col-md-5">
                                             <input type="text" class="form-control" id="telefono" name="telefono">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Direccion</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">Direccion</label>
+                                        <div class="col-md-5">
                                             <input type="text" class="form-control" id="direccion" name="direccion">
 
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Correo Electronico</label>
-                                        <div class="col-sm-2">
+                                        <label for="input-Default" class="col-md-3 control-label">Correo Electronico</label>
+                                        <div class="col-md-5">
                                             <input type="text" class="form-control" id="email" name="email">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input-Default" class="col-sm-2 control-label">Curso</label>
-                                        <div class="col-sm-2" id="combocurso">                                
+                                        <label for="input-Default" class="col-md-3 control-label">Curso</label>
+                                        <div class="col-md-5" id="combocurso">                                
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -108,13 +108,14 @@ include (dirname(__FILE__) . '/../../sources/header.html');
                         </div>
                     </div>
                 </div><!-- Row -->
-            </div><!-- Main Wrapper -->
 
-            <div class="page-footer">
-                <p class="no-s">2016 &copy; Bilbox by dougborton.</p>
-            </div>
+            </div><!-- Main Wrapper -->
         </div><!-- Page Inner -->
-    </main><!-- Page Content -->
+                        <?php
+include (dirname(__FILE__) . '/../../sources/footer.html');
+?>
+    </div>
+    </div><!-- Page Content -->
     <!-- Javascripts -->
     <script type="text/javascript" src="../../public/js/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="../../public/js/datatables.js"></script>

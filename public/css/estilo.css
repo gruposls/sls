@@ -3,14 +3,16 @@
 html{
     height: 100%!important;
     position: relative;
+
 }
 *{    box-sizing: border-box;}
+
 body{
         position: relative;
     height: 100%!important;
     width: 100%;
     font-family: 'Lato',sans-serif;
-    font-size: 13px;
+    font-size: 100%
     color: #4E5E6A;
     margin: 0;
     
@@ -62,7 +64,7 @@ p{    display: block;
 .form-group{    margin-bottom: 15px;}
 .form-control{    background: #fff;
 
-    border: 1px solid #dce1e4;
+        border: 1px solid #f3d400;
     box-shadow: none!important;
     font-size: 13px;
     padding: 6px 10px!important;
@@ -95,9 +97,8 @@ width: 100%;
 }
 
 .page-inner{
-        padding: 0 0 50px;
+            padding-top: 44px;
     position: relative;
-        background: #F1F4F9;
         overflow: hidden;
 }
 optgroup,button,input{    font: inherit;}
@@ -159,7 +160,9 @@ box-shadow: 0 5px 5px -5px rgba(0,0,0,.1);
 }
 
 .panel-body{
-        padding: 15px;
+       margin: 0 auto;
+    width: 45%;
+    padding: 15px;
 }
 
 .form-horizontal .form-group{
@@ -167,7 +170,7 @@ box-shadow: 0 5px 5px -5px rgba(0,0,0,.1);
     margin-left: -15px;
 }
 
-@media (min-width: 768px){.form-horizontal .control-label {padding-top: 7px;
+@media (min-width: 768px){.form-horizontal .control-label {padding-top: 15px;
     margin-bottom: 0;
     text-align: right;}}
 
