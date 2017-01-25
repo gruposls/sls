@@ -21,8 +21,8 @@
 			$alumno->setTelefono( $_POST["telefono"] );
 			$alumno->setDireccion( $_POST["direccion"] );
 			$alumno->setEmail( $_POST["email"] );
-			$alumno->setCreated_at( date("Y-m-d", time()) );
-			$alumno->setUpdated_at( date("Y-m-d", time()) );
+			$alumno->setCreated_at( date("Y-m-d"));//date("Y-m-d H:i:s");
+			$alumno->setUpdated_at( date("Y-m-d H:i:s") );
 			$alumno->setEstado(0);//por defecto cero
 			$alumno->setIdcurso( $_POST["idcurso"] );
 
@@ -31,6 +31,7 @@
 			if ( $validar->validarCampos() ){
 				$dao = new DAOAlumno();
 				$dao->registrar( $alumno ) ? $informacion["respuesta"] = "ok_registro" : $informacion["respuesta"] = "error_registro";
+				include (dirname(__FILE__) . '/../libreria/email.php');//envio a email
 			}else{
 				$informacion["respuesta"] = "error_campos"; 
 			}
@@ -50,9 +51,9 @@
 
 		public function listarPorArregloParametros(){
 
-			$parametros[0] = 0;
-			$parametros[1] = "2017-01-20";
-			$parametros[2] = "2017-01-23";
+			$parametros[0] = $_POST["estado"];
+			$parametros[1] = $_POST["fecha_inicio"];
+			$parametros[2] = $_POST["fecha_final"];
 
 			$dao = new DAOAlumno();
 			$dao->listarPorArregloParametros( $parametros );

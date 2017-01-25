@@ -6,7 +6,9 @@
         }).done(function( info ){
             var json = JSON.parse( info );
             var combo="";
-            combo+="<select id='curso' class='form-control'>";
+
+            combo+="<select id='idcurso' name='idcurso' class='form-control'>";
+
             combo+="<option>Seleccionar Curso</option>"
             for (var i=0; i<json.length;i++) {                
             combo+="<option value='"+json[i].idcurso+"'>"+json[i].nombre+"</option>";

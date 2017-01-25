@@ -45,7 +45,7 @@ $correo = "<div style='width:90%; border:4px ridge blue; padding:6px;'>";
 	$correo .= "En él puedes ver:";
 	$correo .= "<ul>";
 	$correo .= "<li>Ver un correo en HTML</li>";
-	$correo .= "<li>Comprobar las funcionalidades de PHPMailer</li>";
+	$correo .= "<li>Comprobar las funcionalidades de PHPMailer 25/01/2017</li>";
 	$correo .= "<li>Contactar con nosotros <a href='http://eldesvandejose.com/contacta-con-nosotros/' target='_blank'>aquí</a></li>";
 	$correo .= "<li>Registrarte en la página <a href='http://eldesvandejose.com/register/' target='_blank'>aquí</a></li>";
 	$correo .= "</ul>";
@@ -63,8 +63,13 @@ $correo = "<div style='width:90%; border:4px ridge blue; padding:6px;'>";
 $mail->Body = $correo;
 $mail->AltBody = 'This is a plain-text message body';
 
-if (!$mail->send()) {
+$mail->send();
+
+
+//Validación para comprobar si el email se envió correctamente
+
+/*if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
     echo "Message sent!";
-}
+}*/

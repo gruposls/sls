@@ -83,7 +83,7 @@
 			$conexion = new Conexion();
 			try{
 				$cnn = $conexion->getConexion();
-				$sql = "SELECT p.idpersona, p.nombre, app, apm, p.estado, p.idcurso, c.nombre as curso
+				$sql = "SELECT p.nombre, app, apm, p.estado, p.idcurso, c.nombre as curso
 						FROM persona p INNER JOIN curso c 
 						ON p.idcurso = c.idcurso
 						WHERE p.estado = :estado and created_at between :fecha_inicio and :fecha_final
