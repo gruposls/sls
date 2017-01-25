@@ -7,20 +7,20 @@
 		public function registrar(){
 			$bl = new blAlumno();
 			//$alumno = new Alumno();
-			$_POST["nombre"] = "Pett";
-			$_POST["app"] = "Ríos";
-			$_POST["apm"] = "Abarca";
-			$_POST["dni"] = "48751230";
+			$_POST["nombre"] = "Jorge";
+			$_POST["app"] = "Vereau";
+			$_POST["apm"] = "ABC";
+			$_POST["dni"] = "47859508";
 			$_POST["sexo"] = 1;
-			$_POST["fecha_nac"] = "2017-01-16";
-			$_POST["telefono"] = "044211454";
-			$_POST["direccion"] = "Av. America #145";
-			$_POST["email"] = "pett.j.rios@gmasil.com";
+			$_POST["fecha_nac"] = "1991-04-11";
+			$_POST["telefono"] = "044218562";
+			$_POST["direccion"] = "Av. America #74";
+			$_POST["email"] = "jorge.v.flores@gmail.com";
 			//date("Y-m-d", time()) = ;
 			//date("Y-m-d", time()) = ;
 			//$alumno->setEstado(0);//por defecto cero
-			$_POST["idcurso"] = 2;
-
+			$_POST["idcurso"] = 1;
+			//include (dirname(__FILE__) . '/../libreria/email.php');
 			echo $bl->registrar() ? "Se registró." : "Llenar e ingresar los campos correctamente.";
 		}
 
@@ -37,6 +37,6 @@
 	}
 
 	$test = new TestAlumno();
-	$test->listarPorArregloParametros();
+	$test->registrar();
 
  ?>
