@@ -83,7 +83,7 @@
 			$conexion = new Conexion();
 			try{
 				$cnn = $conexion->getConexion();
-				$sql = "SELECT p.nombre, app, apm, p.estado, p.idcurso, c.nombre as curso
+				$sql = "SELECT p.idpersona, p.nombre, app, apm, p.estado, p.idcurso, c.nombre as curso
 						FROM persona p INNER JOIN curso c 
 						ON p.idcurso = c.idcurso
 						WHERE p.estado = :estado and created_at between :fecha_inicio and :fecha_final
@@ -105,6 +105,25 @@
 				$statement->closeCursor();
 				$conexion = null;
 			}
+		}
+
+		public function modificarEstadoPago($arreglo) : bool{
+			$conexion = new Conexion();
+			$respuesta = false;
+			try{
+				$cnn = $conexion->getConexion();
+				$sql = "UPDATE persona SET estado = :estado WHERE idpersona = :idpersona;";
+				$statement = $cnn->prepare( $sql );
+				$statement->bindParam(":idpersona", $arreglo[0], PDO::PARAM_INT );
+				$statement->bindParam(":estado", $arreglo[1], PDO::PARAM_INT);
+				$respuesta = $statement->execute();					
+			}catch(Exception $e){
+				echo "EXCEPCIÓN ".$e->getMessage();
+			}finally{
+				$statement->closeCursor();
+				$conexion = null;			
+			}
+			return $respuesta;
 		}
 	}
  ?>

@@ -24,7 +24,13 @@ var alumno_listar = function(){
         if( fecha_inicio == "" && fecha_final == "" ){
             alert("Llenar los campos de las fechas");
         }else{
-            var table = $("#tabla_alumno").DataTable({
+            var table = listar(fecha_inicio, fecha_final);
+            obtener_data_alumno("#tabla_alumno tbody", table);
+        }
+    });
+
+    function listar(fecha_inicio, fecha_final){
+        var table = $("#tabla_alumno").DataTable({
                 "destroy": true,
                 "ajax":{
                     "method":"POST",
@@ -36,13 +42,38 @@ var alumno_listar = function(){
                 {"data":"app"},
                 {"data":"apm"},
                 {"data":"curso"},
-                {"data":"estado"}
+                {"data":"estado"},
+                {"defaultContent": "<button type='button' class='editar btn btn-primary'><i class='fa fa-pencil-square-o'></i></button>"}
                 ]
             });
-        }
-    });
+        return table;
+    }
 
-    
+
+    var obtener_data_alumno = function(tbody, table){
+        $(tbody).on("click", "button.editar", function(){
+            var data = table.row( $(this).parents("tr") ).data();
+            console.log( data );
+            var estado = data.estado == 0 ? 1 : 0;
+            console.log("estado a cambiar: " + estado );
+            $.ajax({
+                method:"POST",
+                url: "../../alumno/AlumnoController.php",
+                data: {opcion:"modificarEstadoPago", idpersona: data.idpersona, estado : estado } 
+            }).done( function( info ){
+                listar( fecha_actual(), fecha_actual() );
+            });
+        });
+    }
+
+    function fecha_actual(){
+        var d = new Date(),
+            dia = d.getDate(),
+            mes = d.getMonth()+1,
+            anio = d.getFullYear();
+        var fecha = anio+"-"+mes+"-"+dia;
+        return fecha;
+    }
     
 }
 

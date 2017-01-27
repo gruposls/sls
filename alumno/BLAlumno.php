@@ -58,6 +58,15 @@
 			$dao = new DAOAlumno();
 			$dao->listarPorArregloParametros( $parametros );
 		}
+
+		public function modificarEstadoPago() : bool{
+
+			$parametros[0] = $_POST["idpersona"];
+			$parametros[1] = $_POST["estado"];
+
+			$dao = new DAOAlumno();
+			$dao->modificarEstadoPago($parametros);
+		}
 	}
 
 	/*$alumno = new Alumno();

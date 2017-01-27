@@ -36,7 +36,8 @@ include (dirname(__FILE__) . '/../../sources/header.html');
                                             <th>A. Paterno</th>
                                             <th>A. Materno</th>
                                             <th>Curso</th>
-                                            <th>Estado</th>                                            
+                                            <th>Estado</th>
+                                            <th></th>                                       
                                         </tr>
                                     </thead>                                            
                                 </table>

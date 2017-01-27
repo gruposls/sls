@@ -20,6 +20,11 @@
 			$bl_alumno = new BLAlumno();
 			$bl_alumno->listarPorArregloParametros();			
 			break;
+
+		case 'modificarEstadoPago':
+			$bl_alumno = new BLAlumno();
+			$bl_alumno->modificarEstadoPago();
+			break;
 	}
 	
 	
