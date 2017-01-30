@@ -50,26 +50,15 @@ $correo = "<div style='width:90%; border:4px ridge blue; padding:6px;'>";
 	$correo .= "<li>Registrarte en la página <a href='http://eldesvandejose.com/register/' target='_blank'>aquí</a></li>";
 	$correo .= "</ul>";
 	// En nuestro correo incluimos hasta un formulario.
-	$correo .= "<form action='mailto:mi.cuenta@mi.servidor.com' method='post'>";
-	$correo .= "<br /><br /><br /><br />";
-	$correo .= "Tu nombre: ";
-	$correo .= "<input type='text' name='nombre' size='20' style='border: 1px solid blue; font-size:12px; font-familiy:Arial;' /><br /><br />";
-	$correo .= "Tu opinión:<br />";
-	$correo .= "<textarea name='opinion' cols='60' rows='10' style='border: 1px solid blue; font-size:12px; font-familiy:Arial; resize:none;'></textarea>";
-	$correo .= "<br /><br />";
-	$correo .= "<input type='submit' value='Enviar' style='border: 1px solid blue; font-size:12px; font-familiy:Arial;' />";
-	$correo .= "</form>";
+	
 
 $mail->Body = $correo;
 $mail->AltBody = 'This is a plain-text message body';
 
 $mail->send();
 
-
-//Validación para comprobar si el email se envió correctamente
-
-/*if (!$mail->send()) {
+if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
-}*/
+    echo "Se ha enviado informacion a su correo.";
+}

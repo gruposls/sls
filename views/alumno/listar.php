@@ -1,3 +1,9 @@
+<?php 
+/*if( empty($_GET["n"]) || !isset($_GET["n"])  ){
+   header("Location: http://cv.gruposls.com/");
+}*/
+
+?>
 <!DOCTYPE html>
 <html>
 <?php
