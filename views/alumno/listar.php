@@ -26,6 +26,9 @@ include (dirname(__FILE__) . '/../../sources/header.html');
                     </div>
                 </div>
                 <div class="row">
+                    <p class="mensaje"></p>
+                </div>
+                <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-white">
                             <div class="panel-body">

@@ -17,9 +17,9 @@
 var alumno_listar = function(){
     $("#alumno_click").on("click", function(){
         var fecha_inicio = $("#fecha_inicio").val(),
-            fecha_final = $("#fecha_final").val(),
-            estado = $("input[name=estado]:checked").val();
-        console.log(fecha_inicio+" to "+fecha_final + " e: " + estado);
+            fecha_final = $("#fecha_final").val();
+            //estado = $("input[name=estado]:checked").val();
+        console.log(fecha_inicio+" to "+fecha_final);
 
         if( fecha_inicio == "" && fecha_final == "" ){
             alert("Llenar los campos de las fechas");
@@ -30,6 +30,7 @@ var alumno_listar = function(){
     });
 
     function listar(fecha_inicio, fecha_final){
+        estado = $("input[name=estado]:checked").val();
         var table = $("#tabla_alumno").DataTable({
                 "destroy": true,
                 "ajax":{
@@ -49,7 +50,6 @@ var alumno_listar = function(){
         return table;
     }
 
-
     var obtener_data_alumno = function(tbody, table){
         $(tbody).on("click", "button.editar", function(){
             var data = table.row( $(this).parents("tr") ).data();
@@ -61,6 +61,9 @@ var alumno_listar = function(){
                 url: "../../alumno/AlumnoController.php",
                 data: {opcion:"modificarEstadoPago", idpersona: data.idpersona, estado : estado } 
             }).done( function( info ){
+                $(".mensaje").fadeIn(500).html("Se han realizado los cambios correctamente.").css({"background":"#88D8B0"});
+                $(".mensaje").fadeOut(3000);
+                //Asignación de fecha actual.
                 listar( fecha_actual(), fecha_actual() );
             });
         });
