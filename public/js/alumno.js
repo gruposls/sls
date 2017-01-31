@@ -28,9 +28,9 @@ var alumno_listar = function(){
             obtener_data_alumno("#tabla_alumno tbody", table);
         }
     });
-
+}
     function listar(fecha_inicio, fecha_final){
-        estado = $("input[name=estado]:checked").val();
+        var estado = $("input[name=estado]:checked").val();
         var table = $("#tabla_alumno").DataTable({
                 "destroy": true,
                 "ajax":{
@@ -47,6 +47,8 @@ var alumno_listar = function(){
                 {"defaultContent": "<button type='button' class='editar btn btn-primary'><i class='fa fa-pencil-square-o'></i></button>"}
                 ]
             });
+        
+        
         return table;
     }
 
@@ -78,5 +80,5 @@ var alumno_listar = function(){
         return fecha;
     }
     
-}
+
 
