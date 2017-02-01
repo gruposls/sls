@@ -29,6 +29,7 @@ var alumno_listar = function(){
                 alert("Llenar los campos de las fechas");
             }else{
                 var table = listar(fecha_inicio, fecha_final);
+                console.log(table);
                 obtener_data_alumno("#tabla_alumno tbody", table);
             }
         });
@@ -36,7 +37,12 @@ var alumno_listar = function(){
 
     function listar(fecha_inicio, fecha_final){
         var estado = $("input[name=estado]:checked").val();
-        var table = $("#tabla_alumno").DataTable({
+        
+        var table = $("#tabla_alumno").DataTable();
+            table.destroy();
+            $("#tabla_alumno").empty();
+
+            table = $("#tabla_alumno").DataTable({
                 "destroy": true,
                 "ajax":{
                     "method":"POST",

@@ -78,13 +78,13 @@ $("#fecha_inicio").datepicker({
         //dateFormat: 'dd/mm/yy',
         dateFormat: 'yy-mm-dd',
         firstDay: 1,
-        maxDate: '+0d'         
+        //maxDate: '+0d'         
     }).datepicker("setDate", new Date());
 $("#fecha_final").datepicker({
         //dateFormat: 'dd/mm/yy',
         dateFormat: 'yy-mm-dd',
         firstDay: 1,
-        maxDate: '+0d'
+        //maxDate: '+0d'
     }).datepicker("setDate", new Date());
 });
 
