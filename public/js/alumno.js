@@ -49,7 +49,7 @@ var alumno_listar = function(){
             });
         
         
-        return table;
+        return table; 
     }
 
     var obtener_data_alumno = function(tbody, table){
