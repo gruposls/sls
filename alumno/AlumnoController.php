@@ -1,4 +1,4 @@
-<?php 
+<?php  
 	include 'BLAlumno.php';
 
 	$opcion = $_POST["opcion"];
